@@ -1,25 +1,25 @@
 <template>
-<div class = "flex">
+  <div class="flex">
     <h1>Lista de Tarefas</h1>
     <Search></Search>
     <Task></Task>
-</div>
+  </div>
 </template>
 <script>
-import Search from './inputs/Search.vue'
-import Task from './inputs/Task.vue';
+import Search from "./inputs/Search.vue";
+import Task from "./inputs/Task.vue";
 export default {
-  name: 'Header',
+  name: "Header",
   components: {
     Search,
-    Task
-  }
+    Task,
+  },
 };
 </script>
-<style>
-  .flex{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
+<style scoped>
+.flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 </style>

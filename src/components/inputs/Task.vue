@@ -1,12 +1,9 @@
 <template>
-    <button id="taskButton"> + Tarefa</button>
+  <button>+ Tarefa</button>
 </template>
 
 <script>
-export default {
-     name: 'Task'
-}
+export default {};
 </script>
 <style>
-    
 </style>
