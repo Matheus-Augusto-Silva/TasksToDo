@@ -1,9 +1,23 @@
 <template>
-  <button>+ Tarefa</button>
+  <button class="btn btn-info">+ Tarefa</button>
 </template>
 
 <script>
 export default {};
 </script>
-<style>
+<style scoped>
+.btn {
+  margin-bottom: 20px;
+  width: 100px;
+  height: 45px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-left: 30px;
+  align-items: center !important;
+}
+.btn-info {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+}
 </style>

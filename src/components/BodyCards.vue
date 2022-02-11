@@ -40,7 +40,8 @@ export default {
 .container {
   width: 30%;
   height: max-content;
-  border: 1px solid black;
   border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 12px -4px rgba(0,0,0,0.74); 
+  box-shadow: 0px 0px 12px -4px rgba(0,0,0,0.74);
 }
 </style>
