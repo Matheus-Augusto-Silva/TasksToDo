@@ -2,8 +2,8 @@
   <div id="app">
     <Header></Header>
     <div class="flex">
-      <BodyCards :titulo="abertas"></BodyCards>
-      <BodyCards :titulo="fechadas"></BodyCards>
+      <BodyCards v-if="aberta > 0" :titulo="abertas" :cards="lodash.filter(cards, card => {return card.status === 'aberta'})" ></BodyCards> 
+      <BodyCards v-if="fechada > 0" :titulo="fechadas" :cards="lodash.filter(cards, card => {return card.status === 'fechada'})"></BodyCards> 
     </div>
   </div>
 </template>
@@ -18,12 +18,27 @@ export default {
     Header,
     BodyCards,
   },
-  data() {
+   data() {
     return {
       abertas: "Abertas",
       fechadas: "Fechadas",
+      cards: [
+        { id: 1, titulo: "Card1", prioridade: true, status: "aberta" },
+        { id: 2, titulo: "Card1", prioridade: true, status: "aberta" },
+        { id: 2, titulo: "Card1", prioridade: true, status: "fechada" },
+      ]
     };
   },
+  computed: {
+    aberta () {
+      let res = this.lodash.countBy(this.cards, card => { return card.status === 'aberta'})
+      return res.true
+    },
+    fechada () {
+      let res = this.lodash.countBy(this.cards, card => { return card.status === 'fechada'})
+      return res.true
+    },
+  }
 };
 </script>
 

@@ -6,35 +6,10 @@
       @addTasks="newTasks()"
     ></Task>
     <div class="container">
-      <h1>{{ titulo }}</h1>
+      <h1  >{{ titulo }}</h1> 
       <div v-for="card in cards" :key="card.id">
-        <p
-          v-if="
-            titulo === 'Abertas'
-              ? card.status === 'aberta'
-              : card.status === 'fechada'
-          "
-        >
-          {{
-            lodash.sumBy(
-              lodash.filter(cards, function (card) {
-                return card.status === "aberta";
-              })
-            )
-          }}
-          <Card
-            v-if="
-              titulo === 'Abertas'
-                ? lodash.filter(cards, (card) => {
-                    return card.status === 'aberta';
-                  })
-                : lodash.filter(cards, (card) => {
-                    return card.status === 'fechada';
-                  })
-            "
-          >
-          </Card>
-        </p>
+        <Card/>
+        {{card}}
       </div>
     </div>
   </div>
@@ -45,19 +20,8 @@ import Task from "./inputs/Task.vue";
 import Card from "./Card.vue";
 export default {
   name: "BodyCards",
-  components: { Card, Task },
-  props: ["titulo"],
-  data() {
-    return {
-      cards: [
-        { id: 1, titulo: "Card1", prioridade: true, status: "aberta" },
-        { id: 2, titulo: "Card1", prioridade: true, status: "aberta" },
-      ],
-    };
-  },
-  methods: {
-    // newTasks() {},
-  },
+  components: { Task, Card },
+  props: ["titulo", "cards"]
 };
 </script>
 
