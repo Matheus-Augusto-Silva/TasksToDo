@@ -1,9 +1,15 @@
 <template>
-  <button class="btn btn-info">+ Tarefa</button>
+  <button class="btn btn-info" @click="newTask">+ Tarefa</button>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    newTask() {
+      this.$emit("addTasks");
+    },
+  },
+};
 </script>
 <style scoped>
 .btn {
