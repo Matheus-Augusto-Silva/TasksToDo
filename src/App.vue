@@ -1,29 +1,13 @@
 <template>
   <div id="app">
-    <Header></Header>
-    <div class="flex">
-      <BodyCards :titulo="abertas"></BodyCards>
-      <BodyCards :titulo="fechadas"></BodyCards>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
-import BodyCards from "./components/BodyCards.vue";
-
 export default {
   name: "App",
-  components: {
-    Header,
-    BodyCards,
-  },
-  data() {
-    return {
-      abertas: "Abertas",
-      fechadas: "Fechadas",
-    };
-  },
+  components: {},
 };
 </script>
 
