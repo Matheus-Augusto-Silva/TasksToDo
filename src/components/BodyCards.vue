@@ -6,7 +6,7 @@
       @addTasks="newTasks()"
     ></Task>
     <div class="container">
-      <h1  >{{ titulo }}</h1> 
+      <h1>{{ titulo }}</h1>
       <div v-for="card in cards" :key="card.id">
         <Card> </Card>
       </div>
