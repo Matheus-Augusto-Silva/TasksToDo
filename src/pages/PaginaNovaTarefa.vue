@@ -1,17 +1,25 @@
 <template>
   <!-- nome -->
   <div class="main">
-      <h1 class="title">Cadastro de tarefa</h1>
-      <div class="form-task">
-        <label for="name" class="name label" style="font-weight:bold;" >Nome da tarefa</label>
-        <input type="text" name="name" id="name" class="name" />
+    <h1 class="title">Cadastro de tarefa</h1>
+    <div class="form-task">
+      <label for="name" class="name label" style="font-weight: bold"
+        >Nome da tarefa</label
+      >
+      <input type="text" name="name" id="name" class="name" />
     </div>
-    <button class="btn btn-info">Adicionar</button>
+    <button class="btn btn-info" @click="addTask()">Adicionar</button>
+    <button class="btn back" @click="$router.push('/')">Voltar</button>
   </div>
 </template>
 <script>
 export default {
-}
+  methods: {
+    addTask() {
+      console.log("botao clicado");
+    },
+  },
+};
 </script>
 <style scoped>
 .main {
@@ -20,7 +28,7 @@ export default {
 }
 
 .title {
-  margin:auto;
+  margin: auto;
   color: #007bff;
 }
 .form-task {
@@ -30,14 +38,14 @@ export default {
   margin: auto;
 }
 .name {
- width: 300px; 
- outline: 0;
- height: 30px;
- border-radius: 5px;
- font-size: 18px;
+  width: 300px;
+  outline: 0;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 18px;
 }
 
-.name:focus{
+.name:focus {
   border: 2px solid #007bff;
 }
 
@@ -45,14 +53,30 @@ export default {
   text-align: left;
   color: #007bff;
 }
+.btn:hover {
+  cursor: pointer;
+  top: 30px;
+  right: 30px;
+  opacity: 0.9;
+}
 
 .btn {
   width: 100px;
   height: 35px;
   border-radius: 3px;
   position: absolute;
-  top:30px;
+  top: 30px;
   right: 30px;
+}
+
+.back {
+  width: 100px;
+  height: 35px;
+  border-radius: 3px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  border: none;
 }
 
 .btn-info {
