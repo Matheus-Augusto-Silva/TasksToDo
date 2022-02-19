@@ -6,14 +6,9 @@
       @addTasks="newTasks()"
     ></Task>
     <div class="container">
-      <h1  >{{ titulo }}</h1> 
+      <h1>{{ titulo }}</h1>
       <div v-for="card in cards" :key="card.id">
-<<<<<<< HEAD
         <Card> </Card>
-=======
-        <Card/>
-        {{card}}
->>>>>>> 357f337bbb4949f69f5e87243c157625eea26d75
       </div>
     </div>
   </div>
@@ -24,13 +19,8 @@ import Task from "./inputs/Task.vue";
 import Card from "./Card.vue";
 export default {
   name: "BodyCards",
-<<<<<<< HEAD
   components: { Card, Task },
   props: ["titulo", "cards"],
-=======
-  components: { Task, Card },
-  props: ["titulo", "cards"]
->>>>>>> 357f337bbb4949f69f5e87243c157625eea26d75
 };
 </script>
 
