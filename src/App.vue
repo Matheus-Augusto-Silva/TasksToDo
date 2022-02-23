@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <Header></Header>
+    <router-view></router-view>
     <div class="flex">
       <BodyCards v-if="aberta > 0" :titulo="abertas" :cards="lodash.filter(cards, card => {return card.status === 'aberta'})" ></BodyCards> 
-      <BodyCards v-if="fechada > 0" :titulo="fechadas" :cards="lodash.filter(cards, card => {return card.status === 'fechada'})"></BodyCards> 
+      <BodyCards v-if="fechada > 0" :titulo="fechadas" :cards="lodash.filter(cards, card => {return card.status === 'fechada'})"></BodyCards>  -->
     </div>
   </div>
 </template>
