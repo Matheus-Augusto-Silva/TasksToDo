@@ -1,7 +1,7 @@
 <template>
   <div class="card-body">
     <div class="flex">
-      <p class="titulo">Titulo da tarefa</p>
+      <p class="titulo">{{}}</p>
       <i class="fa fa-pen"></i>
     </div>
     <div class="flex">

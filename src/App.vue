@@ -10,36 +10,9 @@
 </template>
 
 <script>
-import Header from "./components/Header.vue";
-import BodyCards from "./components/BodyCards.vue";
-
 export default {
   name: "App",
-  components: {
-    Header,
-    BodyCards,
-  },
-   data() {
-    return {
-      abertas: "Abertas",
-      fechadas: "Fechadas",
-      cards: [
-        { id: 1, titulo: "Card1", prioridade: true, status: "aberta" },
-        { id: 2, titulo: "Card1", prioridade: true, status: "aberta" },
-        { id: 2, titulo: "Card1", prioridade: true, status: "fechada" },
-      ]
-    };
-  },
-  computed: {
-    aberta () {
-      let res = this.lodash.countBy(this.cards, card => { return card.status === 'aberta'})
-      return res.true
-    },
-    fechada () {
-      let res = this.lodash.countBy(this.cards, card => { return card.status === 'fechada'})
-      return res.true
-    },
-  }
+  components: {},
 };
 </script>
 

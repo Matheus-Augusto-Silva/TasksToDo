@@ -1,5 +1,9 @@
 <template>
-  <button class="btn btn-info" @click="newTask">+ Tarefa</button>
+  <div>
+    <router-link tag="button" class="btn btn-info" to="/tarefa"
+      >+ Tarefa</router-link
+    >
+  </div>
 </template>
 
 <script>
