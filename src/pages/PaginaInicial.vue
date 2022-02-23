@@ -2,9 +2,7 @@
   <div>
     <Header></Header>
     <div class="flex">
-      {{ aberta }}
-      {{ fechada }}
-
+      <Task class="absolute" @addTasks="newTasks()"></Task>
       <BodyCards
         v-if="aberta > 0"
         :titulo="abertas"
@@ -22,18 +20,14 @@
 <script>
 import Header from "../components/Header.vue";
 import BodyCards from "../components/BodyCards.vue";
+import Task from "../components/inputs/Task.vue";
 export default {
   name: "PaginaInicial",
-  components: { Header, BodyCards },
+  components: { Header, BodyCards, Task },
   data() {
     return {
       abertas: "Abertas",
       fechadas: "Fechadas",
-      cards: [
-        { id: 1, titulo: "Card1", prioridade: true, status: "aberta" },
-        { id: 2, titulo: "Card1", prioridade: true, status: "aberta" },
-        { id: 3, titulo: "Card1", prioridade: true, status: "fechada" },
-      ],
     };
   },
   computed: {
@@ -53,6 +47,9 @@ export default {
       });
       console.log("fechadas:" + response);
       return response.true;
+    },
+    cards() {
+      return this.$store.state.cards;
     },
   },
 };

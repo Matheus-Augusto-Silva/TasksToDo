@@ -6,7 +6,7 @@
       <label for="name" class="name label" style="font-weight: bold"
         >Nome da tarefa</label
       >
-      <input type="text" name="name" id="name" class="name" />
+      <input type="text" name="name" id="name" class="name" v-model="titulo" />
     </div>
     <button class="btn btn-info" @click="addTask()">Adicionar</button>
     <button class="btn back" @click="$router.push('/')">Voltar</button>
@@ -14,9 +14,22 @@
 </template>
 <script>
 export default {
+  data() {
+    return { titulo: "", id: 0 };
+  },
   methods: {
     addTask() {
-      console.log("botao clicado");
+      this.verificaId();
+      this.$store.commit("addCards", {
+        id: this.id,
+        titulo: this.titulo,
+        prioridade: true,
+        status: "aberta",
+      });
+    },
+    verificaId() {
+      let id = this.$store.state.cards;
+      this.id = id.length + 1;
     },
   },
 };

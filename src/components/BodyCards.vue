@@ -1,10 +1,5 @@
 <template>
   <div>
-    <Task
-      v-if="titulo === 'Abertas'"
-      class="absolute"
-      @addTasks="newTasks()"
-    ></Task>
     <div class="container">
       <h1>{{ titulo }}</h1>
       <div v-for="card in cards" :key="card.id">
@@ -15,11 +10,10 @@
 </template>
 
 <script>
-import Task from "./inputs/Task.vue";
 import Card from "./Card.vue";
 export default {
   name: "BodyCards",
-  components: { Card, Task },
+  components: { Card },
   props: ["titulo", "cards"],
 };
 </script>
