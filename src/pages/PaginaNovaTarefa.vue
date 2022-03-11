@@ -26,6 +26,9 @@ export default {
         prioridade: true,
         status: "aberta",
       });
+      if (this.titulo != "") {
+        this.$router.push({ path: "/" });
+      }
     },
     verificaId() {
       let id = this.$store.state.cards;

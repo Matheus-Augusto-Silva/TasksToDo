@@ -7,7 +7,7 @@ Vue.use(Router);
 export default new Router({
   mode: "history",
   routes: [
-    { path: "/", component: PaginaInicial },
-    { path: "/tarefa", component: PaginaNovaTarefa },
+    { path: "/", component: PaginaInicial, name: "home" },
+    { path: "/tarefa", component: PaginaNovaTarefa, name: "task" },
   ],
 });

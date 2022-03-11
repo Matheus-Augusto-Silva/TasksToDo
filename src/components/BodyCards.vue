@@ -3,7 +3,7 @@
     <div class="container">
       <h1>{{ titulo }}</h1>
       <div v-for="card in cards" :key="card.id">
-        <Card> </Card>
+        <Card :card="card"> </Card>
       </div>
     </div>
   </div>

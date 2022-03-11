@@ -1,7 +1,9 @@
 <template>
   <div class="card-body">
     <div class="flex">
-      <p class="titulo">{{}}</p>
+      <p class="titulo">
+        {{ card.titulo }}
+      </p>
       <i class="fa fa-pen"></i>
     </div>
     <div class="flex">
@@ -33,6 +35,7 @@
 <script>
 export default {
   name: "Card",
+  props: ["card"],
 };
 </script>
 
